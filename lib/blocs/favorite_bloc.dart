@@ -7,7 +7,7 @@ class FavoriteBloc implements BlocBase {
 
   Map<String, Video> _favorites = {};
 
-  final StreamController<Map<String, Video>> _favController = StreamController<Map<String, Video>>();
+  final StreamController<Map<String, Video>> _favController = StreamController<Map<String, Video>>.broadcast();
   Stream<Map<String, Video>> get outFav => _favController.stream;
 
   void toggleFavorite(Video video) {
